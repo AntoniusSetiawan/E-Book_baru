@@ -82,57 +82,12 @@
   <section class="featured-section mt-3">
     <div class="container">
       <h2 class="mb-4 text-center">📚 E-Book Populer Minggu Ini</h2>
-      <div class="row g-4">
-
-        <!-- E-Book 1 (Gratis) -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card book-card">
-            <span class="type-badge">E-Book</span>
-            <img src="${book.description}" class="card-img-top book-img" alt="E-Book 1">
-            <div class="card-body">
-              <h5 class="card-title">${book.title}</h5>
-              <p class="text-muted small mb-2">Oleh: ${book.author}</p>
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                <span class="badge bg-danger">Terlaris</span>
-                <div class="rating">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                  <span class="ms-1">4.5</span>
-                </div>
-              </div>
-              <div class="mb-2">
-                <span class="kategori-badge">Teknologi</span>
-                <span class="kategori-badge">Pemrograman</span>
-              </div>
-              <a href="Ebook-1.html" class="btn btn-sm btn-primary w-100">Baca Gratis</a>
-            </div>
-          </div>
-        </div>
+      <div class="row g-4" id="book-list">
+        <!-- Data dari MongoDB akan muncul di sini -->
+      </div>
     </div>
-  </div>
   </section>
 
-  <!-- Script cek status pembayaran -->
-  <script>
-    function cekStatusBayar(ebookId) {
-      const status = localStorage.getItem('ebook_paid_' + ebookId);
-      const tombol = document.getElementById('btn-ebook-' + ebookId);
-      const harga = document.getElementById('harga-ebook-' + ebookId);
-
-      if (status === 'yes') {
-        harga.textContent = 'Gratis! Sudah Dibayar';
-        tombol.textContent = 'Baca Sekarang';
-        tombol.href = 'Ebook-' + ebookId + '.html';
-        tombol.classList.remove('btn-success');
-        tombol.classList.add('btn-primary');
-      }
-    }
-
-    // Cek semua E-Book berbayar
-    cekStatusBayar(2);
-    cekStatusBayar(3);
-    cekStatusBayar(4);
-  </script>
   <script src="main.js"></script>
 </body>
 

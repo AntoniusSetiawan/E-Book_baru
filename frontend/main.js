@@ -4,7 +4,7 @@ async function loadBooks() {
     const books = await res.json();
 
     const container = document.getElementById('book-list');
-    container.innerHTML = '';
+    container.innerHTML = ''; // kosongkan kontainer sebelum isi
 
     books.forEach(book => {
       const col = document.createElement('div');
@@ -37,7 +37,7 @@ async function loadBooks() {
     });
 
   } catch (err) {
-    console.error('Gagal memuat data buku:', err);
+    console.error('❌ Gagal memuat buku:', err);
   }
 }
 
